@@ -3,7 +3,7 @@
 //creation class Bicycle
 
 
-class Bicycle
+class Cars
   {
     private string $color;
 
