@@ -1,66 +1,75 @@
-<?php 
+<?php
 
-//creation class Bicycle
+// Creation class Cars
 
+class Cars{
 
-class Cars
-  {
-    private string $color;
+    public int $nbWheels = 4;
 
     private int $currentSpeed;
 
-    public int $nbSeats =1;
- 
-    public int $nbWheels =2;
+    private string $color;
 
-   
+    private int $nbSeats;
+
+    private string $energy;
+     
+    public int $energyLevel = 2;
   
-    // mouvement du bike 
+  
+    // constructeur 
 
-public function forward(): string  {
-        
+    public function __construct(string $color, int $nbSeats, string $energy)
+    {
+    $this->color = $color;
+    $this->nbSeats = $nbSeats;
+    $this->energy = $energy;
 
-        $this->currentSpeed = 15;
-        return "Go !";
-        }
-    
-       public function brake(): string
-       {
-       $sentence = "";
-       while ($this->currentSpeed > 0) {
-           $this->currentSpeed--;
-           $sentence .= "Brake !!!";
-       }
+    }
+
+    // mouvement de la voiture
+
+    public function start(): string {
+    $this->currentSpeed = 1;
+    return "start up !";
+    }
+
+    public function forward(): string {
+    $this->currentSpeed = 60;
+    return "moving...";
+    }
+
+    public function brake(): string
+    {
+   $sentence = "";
+   while ($this->currentSpeed > 0) {
+       $this->currentSpeed--;
+       $sentence .= "Bake!";
+   }
        $sentence .= "I'm stopped !";
        return $sentence;
-      }
+   }
 
-     
+   public function getColor(): string
+   {
+   return $this->color;
+   }
+   public function setColor(string $color): void
+   {
+   $this->color = $color;
+   }
 
 
 
-      public function getColor(): string
-      {
-         return $this->color;
-      }
-      public function setColor(string $color): void
-      {
-      $this->color = $color;
-      }
+   public function getCurrentSpeed(): int
+   {
+   return $this->currentSpeed;
+   }
+   public function setCurrentSpeed(string $currentSpeed): void
+   {
+   $this->currentSpeed = $currentSpeed;
+   }
+}    
 
-     public function getCurrentSpeed(): int
-    {
-    return $this->currentSpeed;
 
-    } 
-    public function setCurrentSpeed(int $currentSpeed): void
-    {
-     $this->currentSpeed = $currentSpeed;
-    }
-
-    public function __construct(string $color)
-    {
-        $this->color = $color;
-    }
-
-}
+?>
